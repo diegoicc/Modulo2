@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>house_attendance</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div>
+                    <div>
+                        <img src="http://ww1.prweb.com/prfiles/2008/11/19/349701/congressionalseal.jpg" width="120px"
+                            height="120px">
+                        <p class="text-right pt-5 float-right"><i class="material-icons"> mail</i><a href="mailto:">
+                                info@tgif.net</a></p>
+                    </div>
+
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light border border-dark">
+                        <a class="navbar-brand" href="index.html">Home</a>
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Congress 113
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="house.html">House</a>
+                                <a class="dropdown-item" href="senate-data.html">Senate</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Attendace</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="house_attendance.html">House</a>
+                                <a class="dropdown-item" href="senate_attendance.html">Senate</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Party Loyalty</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="house_party-loyalty.html">House</a>
+                                <a class="dropdown-item" href="senate_party-loyalty.html">Senate</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <!--Table container-->
+    <section>
+        <div class="container my-3">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Attendance</h2>
+                    <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each
+                        house.
+                        Representatives and senators rarely force the presence of a quorum by demanding quorum calls;
+                        thus,
+                        in
+                        most
+                        cases, debates continue even if a majority is not present.</p>
+
+                    <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator
+                        stating
+                        "aye"
+                        or "no" when his or her name is announced. The House reserves roll-call votes for the most
+                        formal
+                        matters,
+                        as a roll-call of all 435 representatives takes quite some time; normally, members vote by
+                        electronic
+                        device. In the case of a tie, the motion in question fails. In the Senate, the Vice President
+                        may
+                        (if
+                        present) cast the tiebreaking vote.</p>
+                </div>
+                <div class="col-sm-6">
+                    <h2>House at a glance</h2>
+                    <table id="table1" class="table">
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+            <div class="col-sm-6">
+                <h2>Least Engaged (Bottom 10% Attendance)</h2>
+                <table id="least-a" class="table">
+                </table>
+            </div>
+
+            <div class="col-sm-6">
+                <h2>Most Engaged (Top 10% Attendance)</h2>
+                <table id="most-a" class="table">
+                </table>
+            </div>
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <div class="container bg-light text-center my-3 py-3 border border-dark">
+            2016 TGIF | All Rights Reserved
+        </div>
+    </footer>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+    <script src="house113.js"></script>
+    <script src="statistics.js"></script>
+
+
+
+    </div>
+</body>
+
+</html>
