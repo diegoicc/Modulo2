@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
-<body>
+<body id="app">
     <div class="container">
         <header>
             <nav>
@@ -75,7 +75,7 @@
                     <div class="col-md-2 my-auto">
                         <div class="form-check mb-2 mr-sm-2">
                             <label class="form-check-label" for="inlineFormCheck">
-                                <input type="checkbox" name="party-filter" value="R" onchange="createSenateTable()"
+                                <input type="checkbox" name="party-filter" value="R" @change="createSenateTable()"
                                     checked>
                                 Republican
                             </label>
@@ -84,7 +84,7 @@
                     <div class="col-md-2 my-auto">
                         <div class="form-check mb-2 mr-sm-2">
                             <label class="form-check-label" for="inlineFormCheck">
-                                <input type="checkbox" name="party-filter" value="D" onchange="createSenateTable()"
+                                <input type="checkbox" name="party-filter" value="D" @change="createSenateTable()"
                                     checked>
                                 Democrat
                             </label>
@@ -93,7 +93,7 @@
                     <div class="col-md-2 my-auto">
                         <div class="form-check mb-2 mr-sm-2">
                             <label class="form-check-label" for="inlineFormCheck">
-                                <input type="checkbox" name="party-filter" value="I" onchange="createSenateTable()"
+                                <input type="checkbox" name="party-filter" value="I" @change="createSenateTable()"
                                     checked>
                                 Independent
                             </label>
@@ -104,7 +104,7 @@
                         <div class="col my-auto">
                             <label class="col-auto" for="inlineFormCustomSelect">Filter by State:</label>
                             <select class="custom-select col-md-4" name="states" id="select-states"
-                                onchange="createSenateTable()">
+                                @change="createSenateTable()">
                                 <option value="All">All</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -176,13 +176,14 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         crossorigin="anonymous"></script>
-    <script src="senate113.js"></script>
-    <script src="link.js"></script>
+    <script src="appvue.js"></script>
+    
     </div>
 </body>
 
