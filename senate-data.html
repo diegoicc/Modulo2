@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
-<body id="app">
+<body>
     <div class="container">
         <header>
             <nav>
@@ -67,7 +67,7 @@
             ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the
             House.</p>
     </div>
-    <div class="container">
+    <div id="app" class="container">
         <div>
             <div class="col-auto my-1 bg-light">
                 <div class="row">
@@ -75,8 +75,7 @@
                     <div class="col-md-2 my-auto">
                         <div class="form-check mb-2 mr-sm-2">
                             <label class="form-check-label" for="inlineFormCheck">
-                                <input type="checkbox" name="party-filter" value="R" @change="createSenateTable()"
-                                    checked>
+                                <input type="checkbox" name="party-filter" value="R" @change="miFiltro" checked>
                                 Republican
                             </label>
                         </div>
@@ -84,8 +83,7 @@
                     <div class="col-md-2 my-auto">
                         <div class="form-check mb-2 mr-sm-2">
                             <label class="form-check-label" for="inlineFormCheck">
-                                <input type="checkbox" name="party-filter" value="D" @change="createSenateTable()"
-                                    checked>
+                                <input type="checkbox" name="party-filter" value="D" @change="miFiltro" checked>
                                 Democrat
                             </label>
                         </div>
@@ -93,8 +91,7 @@
                     <div class="col-md-2 my-auto">
                         <div class="form-check mb-2 mr-sm-2">
                             <label class="form-check-label" for="inlineFormCheck">
-                                <input type="checkbox" name="party-filter" value="I" @change="createSenateTable()"
-                                    checked>
+                                <input type="checkbox" name="party-filter" value="I" @change="miFiltro" checked>
                                 Independent
                             </label>
                         </div>
@@ -103,8 +100,7 @@
                     <div class="form-row align-items-center">
                         <div class="col my-auto">
                             <label class="col-auto" for="inlineFormCustomSelect">Filter by State:</label>
-                            <select class="custom-select col-md-4" name="states" id="select-states"
-                                @change="createSenateTable()">
+                            <select class="custom-select col-md-4" name="states" id="select-states" @change="miFiltro">
                                 <option value="All">All</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -164,26 +160,49 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <table id="tablaDatos" class="table"></table>
-    </div>
-    <footer>
-        <div class="container bg-light text-center my-3 py-3 border border-dark">
-            2016 TGIF | All Rights Reserved
-        </div>
-    </footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        crossorigin="anonymous"></script>
-    <script src="appvue.js"></script>
-    
+        <div class="container">
+            <table id="senate-data" class="table table-hover text-center">
+                <thead>
+                    <tr>
+                        <th>FULL NAME</th>
+                        <th>PARTY</th>
+                        <th>STATE</th>
+                        <th>SENIORITY</th>
+                        <th>PORCENTAGE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="member of members">
+                        <td><a :href="member.url"> {{member.last_name}}, {{member.first_name}}
+                                {{member.middle_name}}</a>
+                        <td>
+                        <td>{{member.party}}</td>
+                        <td>{{member.state}}</td>
+                        <td>{{member.seniority}}</td>
+                        <td>{{member.votes_with_party_pct}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <footer>
+            <div class="container bg-light text-center my-3 py-3 border border-dark">
+                2016 TGIF | All Rights Reserved
+            </div>
+        </footer>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous">
+        </script>
+        <script src="appvue.js"></script>
+
+    </div>
     </div>
 </body>
 

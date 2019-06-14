@@ -1,34 +1,4 @@
-/* function createSenateTable(){
-    
-    var elSenateTable = document.getElementById('senate-data');
-    tableEl = addTableToHTML(dataSenate.results[0].members);
-    
-    elSenateTable.innerHTML = tableEl;
-    
-}
 
-function addTableToHTML(membersArray){
-    var elHtml = '<thead class="thead-light"><tr><th>Full Name</th><th>Party</th><th>State </th><th>Seniority</th><th>Percentage of votes with party</th></tr></thead>';
-    elHtml += '<tbody>';
-    
-    membersArray.forEach(function (member) {
-        elHtml += '<tr>';
-        if (member.middle_name === null) {
-            elHtml += '<td><a href="' + member.url + '">' + member.first_name + ' ' + member.last_name + '</td>';
-        } else {
-            elHtml += '<td><a href="' + member.url + '">' + member.first_name + ' ' + member.middle_name + ' ' + member.last_name + '</a></td>';
-        }
-        elHtml += '<td class="party">' + member.party + '</td>';
-        elHtml += '<td class="state">' + member.state + '</td>';
-        elHtml += '<td>' + member.seniority + '</td>';
-        elHtml += '<td> % ' + member.votes_with_party_pct + '</td>';
-        elHtml += '</tr>';
-    });
-    elHtml += '</tbody>';
-    
-    return elHtml;
-}
- */
 createSenateTable();
 
 function createSenateTable() {
