@@ -57,12 +57,13 @@
         </header>
     </div>
     <!--Table container-->
+    <div id="app">
     <section>
         <div class="container my-3">
             <div class="row">
                 <div class="col-sm-6">
                     <h2>Attendance</h2>
-                    <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each
+                    <p class="text-justify">The Constitution specifies that a majority of members constitutes a quorum to do business in each
                         house.
                         Representatives and senators rarely force the presence of a quorum by demanding quorum calls;
                         thus,
@@ -70,7 +71,7 @@
                         most
                         cases, debates continue even if a majority is not present.</p>
 
-                    <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator
+                    <p class="text-justify">The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator
                         stating
                         "aye"
                         or "no" when his or her name is announced. The House reserves roll-call votes for the most
@@ -85,7 +86,37 @@
                 </div>
                 <div class="col-sm-6">
                     <h2>House at a glance</h2>
-                    <table id="table1" class="table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>PARTY</th>
+                                <th>NUMBER OF REPS</th>
+                                <th>% VOTED WITH PARTY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Republicans</td>
+                                <td>{{number_of_republicans}}</td>
+                                <td>{{republicans_average_votes_with_party}} %</td>
+                            </tr>
+                            <tr>
+                                <td>Democrats</td>
+                                <td>{{number_of_democrats}}</td>
+                                <td>{{democrats_average_votes_with_party}} %</td>
+                            </tr>
+                            <tr>
+                                <td>Independents</td>                      
+                                <td>{{number_of_independents}}</td>
+                                <td v-show="numberIndependents == 0"> 0 %</td>
+                                <td v-show="numberIndependents !== 0"> {{independents_average_votes_with_party}} %</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>{{total}}</td>
+                                <td>{{total_average}} %</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -93,19 +124,51 @@
             <div class="row">
             <div class="col-sm-6">
                 <h2>Least Engaged (Bottom 10% Attendance)</h2>
-                <table id="least-a" class="table">
+                <table id="least_engaged" class="table">
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>NUMBER OF MISSED VOTES</th>
+                            <th>% MISSED</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="member of least_engaged">
+                            <td><a :href="member.url"> {{member.last_name}}, {{member.first_name}}
+                                    {{member.middle_name}}</a></td>
+                            <td>{{member.missed_votes}}</td>
+                            <td>{{member.missed_votes_pct}} %</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
 
             <div class="col-sm-6">
                 <h2>Most Engaged (Top 10% Attendance)</h2>
-                <table id="most-a" class="table">
+                <table id="most_engaged" class="table">
+
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>NUMBER OF MISSED VOTES</th>
+                            <th>% MISSED</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="member of most_engaged">
+                            <td><a :href="member.url"> {{member.last_name}}, {{member.first_name}}
+                                    {{member.middle_name}}</a></td>
+                            <td>{{member.missed_votes}}</td>
+                            <td>{{member.missed_votes_pct}} %</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             </div>
 
         </div>
     </section>
+    </div>
     <footer>
         <div class="container bg-light text-center my-3 py-3 border border-dark">
             2016 TGIF | All Rights Reserved

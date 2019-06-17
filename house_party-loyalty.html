@@ -57,6 +57,7 @@
         </header>
     </div>
     <!--Table container-->
+    <div id="app">
     <section>
         <div class="container my-3">
             <div class="row">
@@ -71,8 +72,38 @@
                 </div>
                 <div class="col-sm-6">
                     <h2>House at a glance</h2>
-                    <table id="table1" class="table">
-
+                    <table class="table table-hover text-center  table-bordered">
+                        <thead>
+                            <tr>
+                                <th>PARTY</th>
+                                <th>NUMBER OF REPS</th>
+                                <th>% VOTED WITH PARTY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Republicans</td>
+                                <td>{{number_of_republicans}}</td>
+                                <td>{{republicans_average_votes_with_party}} %</td>
+                            </tr>
+                            <tr>
+                                <td>Democrats</td>
+                                <td>{{number_of_democrats}}</td>
+                                <td>{{democrats_average_votes_with_party}} %</td>
+                            </tr>
+                            <tr>
+                                <td>Independents</td>
+                                <td>{{number_of_independents}}</td>
+                                <td v-show="numberIndependents == 0"> 0 %</td>
+                                <td v-show="numberIndependents !== 0"> {{independents_average_votes_with_party}} %
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>{{total}}</td>
+                                <td>{{total_average}} %</td>
+                            </tr>
+                        </tbody>
                     </table>
 
                 </div>
@@ -81,16 +112,47 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h2>Least Loyal (Bottom 10% of Party)</h2>
-                    <table id="least-l" class="table">
+                    <table id="least_loyal" class="table table-hover text-center table-bordered">
+                        <thead>
+                            <tr>
+                                <th>NAME</th>
+                                <th>NUMBER OF MISSED VOTES</th>
+                                <th>% MISSED</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="member of least_loyal">
+                                <td><a :href="member.url"> {{member.last_name}}, {{member.first_name}}
+                                        {{member.middle_name}}</a></td>
+                                <td>{{member.total_votes}}</td>
+                                <td>{{member.votes_with_party_pct}} %</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 <div class="col-sm-6">
                     <h2>Most Loyal (Top 10% of Party)</h2>
-                    <table id="most-l" class="table">
+                    <table id="most_loyal" class="table table-hover text-center table-bordered">
+                        <thead>
+                            <tr>
+                                <th>NAME</th>
+                                <th>NUMBER OF MISSED VOTES</th>
+                                <th>% MISSED</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="member of most_loyal">
+                                <td><a :href="member.url"> {{member.last_name}}, {{member.first_name}}
+                                        {{member.middle_name}}</a></td>
+                                <td>{{member.total_votes}}</td>
+                                <td>{{member.votes_with_party_pct}} %</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
     </section>
+    </div>
     <footer>
         <div class="container bg-light text-center my-3 py-3 border border-dark">
             2016 TGIF | All Rights Reserved
@@ -100,14 +162,14 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="appvue.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         crossorigin="anonymous"></script>
-    <script src="appvue.js"></script>
-
-
+ 
     </div>
 </body>
 
