@@ -127,16 +127,16 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <h2>Least Engaged (Bottom 10% Attendance)</h2>
-                        <table id="least_engaged" class="table table-hover text-center table-bordered">
+                        <table id="most_engaged" class="table table-hover text-center table-bordered">
                             <thead>
                                 <tr>
-                                    <th>NAME</th>
-                                    <th>NUMBER OF MISSED VOTES</th>
-                                    <th>% MISSED</th>
+                                    <th>Name</th>
+                                    <th>Number of missed votes</th>
+                                    <th>% Missed</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="member of least_engaged">
+                                <tr v-for="member of most_engaged">
                                     <td><a :href="member.url"> {{member.last_name}}, {{member.first_name}}
                                             {{member.middle_name}}</a></td>
                                     <td>{{member.missed_votes}}</td>
@@ -147,17 +147,17 @@
                     </div>
                     <div class="col-sm-6">
                         <h2>Most Engaged (Top 10% Attendance)</h2>
-                        <table id="most_engaged" class="table table-hover text-center table-bordered">
+                        <table id="least_engaged" class="table table-hover text-center table-bordered">
 
                             <thead>
                                 <tr>
-                                    <th>NAME</th>
-                                    <th>NUMBER OF MISSED VOTES</th>
-                                    <th>% MISSED</th>
+                                    <th>Name</th>
+                                    <th>Number of missed votes</th>
+                                    <th>% Missed</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="member of most_engaged">
+                                <tr v-for="member of least_engaged">
                                     <td><a :href="member.url"> {{member.last_name}}, {{member.first_name}}
                                             {{member.middle_name}}</a></td>
                                     <td>{{member.missed_votes}}</td>

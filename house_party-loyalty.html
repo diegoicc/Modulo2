@@ -112,16 +112,16 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h2>Least Loyal (Bottom 10% of Party)</h2>
-                    <table id="least_loyal" class="table table-hover text-center table-bordered">
+                    <table id="most_loyal" class="table table-hover text-center table-bordered">
                         <thead>
                             <tr>
-                                <th>NAME</th>
-                                <th>NUMBER OF MISSED VOTES</th>
-                                <th>% MISSED</th>
+                                <th>Name</th>
+                                <th>Party Votes</th>
+                                <th>% Votes</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="member of least_loyal">
+                            <tr v-for="member of most_loyal">
                                 <td><a :href="member.url"> {{member.last_name}}, {{member.first_name}}
                                         {{member.middle_name}}</a></td>
                                 <td>{{member.total_votes}}</td>
@@ -132,16 +132,16 @@
                 </div>
                 <div class="col-sm-6">
                     <h2>Most Loyal (Top 10% of Party)</h2>
-                    <table id="most_loyal" class="table table-hover text-center table-bordered">
+                    <table id="least_loyal" class="table table-hover text-center table-bordered">
                         <thead>
                             <tr>
-                                <th>NAME</th>
-                                <th>NUMBER OF MISSED VOTES</th>
-                                <th>% MISSED</th>
+                                <th>Name</th>
+                                <th>Party Votes</th>
+                                <th>% Votes</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="member of most_loyal">
+                            <tr v-for="member of least_loyal">
                                 <td><a :href="member.url"> {{member.last_name}}, {{member.first_name}}
                                         {{member.middle_name}}</a></td>
                                 <td>{{member.total_votes}}</td>
